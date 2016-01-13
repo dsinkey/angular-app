@@ -8,8 +8,22 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-app="myApp">
-    <div ng-controller="helloWorldCtrl">
-      <div hello-world name="name" id="greeting"></div>
+    <div class="container" ng-controller="helloWorldCtrl">
+    	<div class="row spacer-sm">
+    		<label class="col-xs-5 text-right" for="fname" ng-model="person.firstName">First Name</label>
+    		<input class="col-xs-7" type="text" id="fname" ng-model="person.firstName">
+    	</div>
+    	<div class="row spacer-sm">
+    		<label class="col-xs-5 text-right" for="lname">Last Name</label>
+    		<input class="col-xs-7" type="text" id="lname" ng-model="person.lastName">
+    	</div>
+    	<div class="row spacer-sm">
+    		<label class="col-xs-5 text-right" for="phone">Phone</label>
+    		<input class="col-xs-7" type="tel" id="phone" ui-mask="{{mask}}" ng-model="person.phone">
+    	</div>
+    	<div class="row spacer-lg">
+    		<pre class="col-xs-12"><code>{{getModel()}}</code></pre>
+    	</div>
     </div>
     <!--(if target dev)><!-->
     <script src="bower/angular/angular.js"></script>
