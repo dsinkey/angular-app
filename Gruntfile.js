@@ -8,15 +8,18 @@ module.exports = function(grunt) {
       },
 
       dist: {
-        src: ['src/bower/angular/angular.js','src/js/*.js'],
+        src: ['src/bower/angular/angular.js',
+        	  'src/js/vendor/ui-utils.js',
+        	  'src/js/app.js',
+        	  'src/js/controllers.js',
+        	  'src/js/directives.js'],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
 
     copy: {
       main: {
-        src: 'src/css/main.css',
-        dest: 'dist/css/main.css',
+      	files: [{expand: true, cdw: 'src/css/', src: ['**'], dest: 'dist/css'}]
       },
     },
 
@@ -27,7 +30,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     karma: {
       unit: {
         configFile: 'conf/karma.conf.js',
