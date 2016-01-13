@@ -6,15 +6,15 @@ describe('specs for directives', function(){
 
 	beforeEach(inject(function($rootScope){
 		$scope = $rootScope.$new();
-		$scope.name = {first "John", last: "Doe"};
+		$scope.name = {first: "Dustin", last: "Sinkey"};
 	}));
-	
+
 	describe('hello-world', function(){
 		it('should contain the provided name', function(){
 			inject(function($compile){
-				var element = $compile('<div hello-world name="name'></div>)($scope);
+				var element = $compile('<div hello-world name="name"></div>')($scope);
 				$scope.$digest();
-				expect(element.html()).toContain("John");
+				expect(element.html()).toContain("Dustin");
 			});
 		});
 	});
