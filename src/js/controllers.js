@@ -33,4 +33,13 @@ angular.module('myApp.controllers', []).controller('helloWorldCtrl', function ($
     	$scope.helpText = "Easy. Just enter your name.";
     	$timeout(function() {$scope.helpText = ""}, 10000);
     };
+
+    $scope.tooltip = function(){
+    	if(!$scope.person.hasOwnProperty("phone")){
+    		return $scope.personfirstName + " has no phone?"
+    	}
+    	else {
+    		return "All good."
+    	}
+    };
 });
