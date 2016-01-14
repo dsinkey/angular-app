@@ -27,4 +27,10 @@ angular.module('myApp.controllers', []).controller('helloWorldCtrl', function ($
         activeColor = 2;
         $timeout(function() { activeColor = 0; }, 2000);
     };
+
+    $scope.helpKeyDown = function($event){
+    	console.log($event);
+    	$scope.helpText = "Easy. Just enter your name.";
+    	$timeout(function() {$scope.helpText = ""}, 10000);
+    };
 });
