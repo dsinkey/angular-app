@@ -7,10 +7,21 @@ describe('controller specs', function() {
  
   beforeEach(inject(function($rootScope, $controller) {
     $scope = $rootScope.$new();
-    $controller('helloWorldCtrl', {$scope: $scope});
+    $controller('CalCtrl', {$scope: $scope});
   }));
  
-  it('should create "name" model with first name "Jane"', function() {
-    expect($scope.name.first).toBe("Dustin");
+  it("should contain 'Fun with AngularJS' event", function() {
+    expect($scope.events[1].title).toBe('Fun with AngularJS');
   });
+
+  it("should contain new event after execution of dayClick function", function() {
+  	$scope.dayClick();
+    expect($scope.events[1].title).toBe('Fun with AngularJS');
+  });
+
+  it("should remove an event", function() {
+  	$scope.remove(2);
+    expect($scope.events.length).toBe(2);
+  });
+
 });
