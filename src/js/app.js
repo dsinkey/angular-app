@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('myApp', ['myApp.controllers', 'myApp.directives','ui.utils'])
-  .value('uiJqConfig',{
-  	tooltip: {
-  		placement: 'bottom'
-  	}
-});
+function onGoogleReady() {
+ console.log("Google maps api initialized.");
+   angular.bootstrap(document.getElementById("myApp"), ['myApp']);
+}
+
+angular.module('myApp', ['myApp.controllers', 'ui.map']);
