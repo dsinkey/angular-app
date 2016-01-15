@@ -1,2 +1,5 @@
 src/bower/
 node_modules
+src/bower_components
+src/bower
+dist/

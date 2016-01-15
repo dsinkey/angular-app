@@ -3,30 +3,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Angular UI Maps</title>
+    <title>Angular UI Calendara</title>
     <link rel="stylesheet" href="css/main.css">
+    <!--(if target dev)><!-->
+    <link rel="stylesheet" href="bower/fullcalendar/fullcalendar.css">
+    <!--<!(endif)-->
+    <!--(if target dev)><!-->
+    <link rel="stylesheet" href="css/fullcalendar.css">
+    <!--<!(endif)-->
 </head>
 <body id="myApp">
+<div ng-controller="CalCtrl">
+    <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+    <div class="cal-entry" ng-repeat="event in events"></div>
+        <div class="delete" ng-click="remove()">x</div>
+        <div>{{event.start | moment }}</div>
+        <div>{{event | duration }}</div>
+        <input ng-model="event.title">
+    </div>
+</div>
 
-<section id="map" ng-controller="MapCtrl">
-    <div data-ui-map="myMap" ui-options="mapOptions" class="map-canvas"
-         data-ui-event="eventBinding"></div>
-
-    <div class="marker" ng-repeat="marker in myMarkers" ng-click="myMap.panTo(marker.getPosition())">
-        Lat: {{ marker.getPosition().lat() }} <br />Lng: {{ marker.getPosition().lng() }}</div>
-
-</section>  
-
-    <!--(if target dev)><!-->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-ui-utils/ui-utils.js"></script>
-<script src="bower_components/angular-ui-map/ui-map.js"></script>
+<!--(if target dev)><!-->
+<script src="bower/jquery/jquery.js"></script>
+<script src="bower/jquery-ui/ui/jquery-ui.js"></script>
+<script src="bower/angular-ui-utils/modules/event/event.js"></script>
+<script src="bower/fullcalendar/fullcalendar.js"></script>
+<script src="bower/momemtjs/moment.js"></script>
+<script src="bower/angular/angular.js"></script>
+<script src="bower/angular-ui-calendar/src/calendar.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/filters.js"></script>
 <!--<!(endif)-->
-<!--(if target dist)>
-<script src="js/fun-with-ui-modules.js"></script>
-<!(endif)-->
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places,weather&sensor=false&callback=onGoogleReady"></script>
 </body>
 </html>

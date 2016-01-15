@@ -1,5 +1,5 @@
 {
-  "name": "AngularApp",
+  "name": "Calendar",
   "homepage": "https://github.com/dsinkey/angular-app",
   "authors": [
     "Dustin <dustinsinkey1@gmail.com>"
@@ -8,7 +8,7 @@
   "main": "src/index.html",
   "keywords": [
     "angular",
-    "maps"
+    "calendar"
   ],
   "license": "MIT",
   "private": true,
@@ -21,8 +21,7 @@
     "tests"
   ],
   "dependencies": {
-      "angular": "~1.2.26",
-      "angular-mocks": "~1.2.26",
-      "angular-ui-map": "~0.5.0"
+      "angular-ui-calendar": "~0.8.1",
+      "momentjs": "~2.8.3"
   }
 }

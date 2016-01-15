@@ -1,14 +1,8 @@
-body {
-	font-family: sans-serif;
-	font-size: 1.2ems;
-	margin: 20px;
+.marker {
+	width: 200px,
+	color: lightskyblue;
+	background-color: #333;
+	margin: 10px 0;
+	padding: 5px;
+	box-shadow: 5px 5px 5px #888;
 }
-
-.spacer-sm {
-	margin-top: 10px;
-}
-
-.spacer-lg {
-	margin-top: 30px;
-}
-
