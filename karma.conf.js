@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '../',
 
 
     // frameworks to use
@@ -14,7 +14,17 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
+    files: [ 'src/bower/jquery/jquery.js',
+             'src/bower/jquery-ui/ui/jquery-ui.js',
+             'src/bower/fullcalendar/fullcalendar.js',
+             'src/bower/momentjs/moment.js',
+             'src/bower/angular/angular.js',
+             'src/bower/angular-ui-calendar/src/calendar.js',
+             'test/lib/angular-mocks.js',
+             'src/js/app.js',
+             'src/js/controller.js',
+             'src/js/filters.js',
+             'test/unit/**/*.js',
     ],
 
 
@@ -50,19 +60,11 @@ module.exports = function(config) {
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-
+    frameworks: ['jasmine'];
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome', 'Firefox'],
-
-
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
-
-    // Concurrency level
-    // how many browser should be started simultaneous
-    concurrency: Infinity
+    plugins: ['karma-chrome-launcher', 'karma-jasmine']
   })
 }
