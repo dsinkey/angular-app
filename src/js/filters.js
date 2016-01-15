@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("myApp.filters"), [])
+angular.module("myApp.filters", [])
   .filter('moment', function(){
   	return function (input){
   		return moment(input).calendar();
